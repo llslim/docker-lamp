@@ -23,7 +23,7 @@ services:
      restart: always
      environment:
        MYSQL_ROOT_PASSWORD: myroot
-       MYSQL_DATABASE: ussaac
+       MYSQL_DATABASE: mydatabase
        MYSQL_USER: myuser
        MYSQL_PASSWORD: mypassword
 

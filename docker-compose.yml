@@ -4,15 +4,18 @@ services:
    drupal:
      depends_on:
        - db
-     image: phpcore:latest
+     image: llslim/docker-apache-php:7-dev
      volumes:
        - c:/webroot/public/html:/var/www/html
        - ./conf/msmtp/msmtprc:/etc/msmtprc
        - ./conf/php/default.ini:/usr/local/etc/php/conf.d/default.ini
+      # - ./conf/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
      ports:
        - 80
+       #- 9000:9000
      restart: always
-#     environment
+     environment:
+       XDEBUG_CONFIG: "idekey=xdebug.Atom remote_host=192.168.1.135"
 
    db:
      image: mysql:5.7

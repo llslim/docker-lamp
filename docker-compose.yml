@@ -1,15 +1,21 @@
 version: '3'
 
 services:
-   drupal:
+   web:
      depends_on:
        - db
      image: llslim/docker-apache-php:latest
      volumes:
+<<<<<<< HEAD
        - ./src/app:/var/www/html
        - .src/backup:/var/www/backup
        # - ./conf/msmtp/msmtprc:/etc/msmtprc
        #- ./conf/php/default.ini:/usr/local/etc/php/conf.d/default.ini
+=======
+        - c:/webroot/public/html:/var/www/html
+      #- ./conf/msmtp/msmtprc:/etc/msmtprc
+      # - ./conf/php/default.ini:/usr/local/etc/php/conf.d/default.ini
+>>>>>>> f1e3875af7a6f94814e73bb59c5d5e88b72fd936
       # - ./conf/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
      ports:
        - 80

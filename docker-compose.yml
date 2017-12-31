@@ -4,11 +4,12 @@ services:
    drupal:
      depends_on:
        - db
-     image: llslim/docker-apache-php:7-dev
+     image: llslim/docker-apache-php:latest
      volumes:
-       - c:/webroot/public/html:/var/www/html
-       - ./conf/msmtp/msmtprc:/etc/msmtprc
-       - ./conf/php/default.ini:/usr/local/etc/php/conf.d/default.ini
+       - ./src/app:/var/www/html
+       - .src/backup:/var/www/backup
+       # - ./conf/msmtp/msmtprc:/etc/msmtprc
+       #- ./conf/php/default.ini:/usr/local/etc/php/conf.d/default.ini
       # - ./conf/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
      ports:
        - 80

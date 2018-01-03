@@ -6,7 +6,7 @@ services:
        - db
      image: llslim/docker-apache-php:latest
      volumes:
-       - ../work:/var/www/html
+       - ../html:/var/www/html
        - ../archive/files:/var/www/archive
        # - ./conf/msmtp/msmtprc:/etc/msmtprc
        #- ./conf/php/default.ini:/usr/local/etc/php/conf.d/default.ini

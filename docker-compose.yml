@@ -6,13 +6,14 @@ services:
        - db
      image: llslim/docker-apache-php:latest
      volumes:
-       - ../html:/var/www/html
+       - ../work:/var/www/html
        - ../archive/files:/var/www/archive
+       - ./conf/apache/sites-available:/etc/apache2/sites-available  
        # - ./conf/msmtp/msmtprc:/etc/msmtprc
        #- ./conf/php/default.ini:/usr/local/etc/php/conf.d/default.ini
       # - ./conf/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
      ports:
-       - 80
+       - 80:80
        #- 9000:9000
      restart: always
      environment:

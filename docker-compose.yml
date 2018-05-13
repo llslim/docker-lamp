@@ -8,7 +8,7 @@ services:
      volumes:
        - ../work:/var/www/html
        - ../archive/files:/var/www/archive
-       - ./conf/apache/sites-available:/etc/apache2/sites-available  
+       - ./conf/apache/sites-available:/etc/apache2/sites-available
        # - ./conf/msmtp/msmtprc:/etc/msmtprc
        #- ./conf/php/default.ini:/usr/local/etc/php/conf.d/default.ini
       # - ./conf/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
@@ -35,14 +35,14 @@ services:
    mail:
      image: mailhog/mailhog
      ports:
-       - 8025
+       - 8025:83
      restart: always
 
 
    pma:
      image: phpmyadmin/phpmyadmin
      ports:
-       - 80
+       - 80:84
      restart: always
 
 # volumes:

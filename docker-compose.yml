@@ -35,14 +35,14 @@ services:
    mail:
      image: mailhog/mailhog
      ports:
-       - 8025:83
+       - 83:8025
      restart: always
 
 
    pma:
      image: phpmyadmin/phpmyadmin
      ports:
-       - 80:84
+       - 84:80
      restart: always
 
 # volumes:

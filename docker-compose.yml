@@ -6,8 +6,8 @@ services:
        - db
      image: llslim/docker-apache-php:latest
      volumes:
-       - ../work:/var/www/html
-       - ../archive/files:/var/www/archive
+       - ../../workshop:/var/www/html
+       - ../../archive:/var/www/archive
        - ./conf/apache/sites-available:/etc/apache2/sites-available
        # - ./conf/msmtp/msmtprc:/etc/msmtprc
        #- ./conf/php/default.ini:/usr/local/etc/php/conf.d/default.ini
@@ -23,7 +23,7 @@ services:
      image: mysql:5.7
      volumes:
        - ./conf/mysql:/etc/mysql/conf.d
-       - ../archive/databases:/docker-entrypoint-initdb.d
+       - ../../archive/databases:/docker-entrypoint-initdb.d
 #       - db_data:/var/lib/mysql
      restart: always
      environment:

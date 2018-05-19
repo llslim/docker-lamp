@@ -4,7 +4,7 @@ services:
    web:
      depends_on:
        - db
-     image: llslim/docker-apache-php:latest
+     image: llslim/docker-apache-php:legacy
      volumes:
        - ../../workshop:/var/www/html
        - ../../archive:/var/www/archive

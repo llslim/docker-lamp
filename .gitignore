@@ -1,0 +1,2 @@
+conf/apache/sites-available/*
+!conf/apache/sites-available/000-default.conf
